@@ -1,8 +1,13 @@
 <template>
-    <el-menu :default-active="activeIndex2" class="el-menu-demo" mode="horizontal" @select="handleSelect" background-color="#545c64"
-        text-color="#fff" active-text-color="#ffd04b">
-            <el-menu-item index="1" @click="toRoute('/')">SITH</el-menu-item>
-            <el-menu-item index="2" @click="toRoute('/contact')" router='true'>Contact</el-menu-item>
+    <el-menu :default-active="activeIndex2" class="el-menu-demo" mode="horizontal" @select="handleSelect"
+             background-color="#545c64"
+             text-color="#fff" active-text-color="#ffd04b">
+        <el-menu-item index="1" @click="toRoute('/')">SITH</el-menu-item>
+        <el-submenu index="2">
+            <template slot="title">Showcase</template>
+            <el-menu-item index="2-1" @click="toRoute('/showcase/shopping-cart')">Shopping Cart</el-menu-item>
+        </el-submenu>
+        <el-menu-item index="2" @click="toRoute('/contact')" router='true'>Contact</el-menu-item>
     </el-menu>
 </template>
 
@@ -18,7 +23,7 @@
             handleSelect(key, keyPath) {
                 console.log(key, keyPath);
             },
-            toRoute(path){
+            toRoute(path) {
                 this.$router.push(path);
             }
         }

@@ -17,3 +17,6 @@ Route::get('/', function () {
 Route::get('/contact', function () {
     return view('welcome');
 });
+Route::get('/showcase/shopping-cart', function () {
+    return view('welcome');
+});

@@ -1,5 +1,12 @@
 <template>
-    <app-header></app-header>
+    <div class="main">
+        <app-header></app-header>
+        <el-container>
+            <el-main>
+                <router-view></router-view>
+            </el-main>
+        </el-container>
+    </div>
 </template>
 
 <script>
@@ -12,3 +19,10 @@
         }
     }
 </script>
+
+<style scoped>
+    .main {
+        background: linear-gradient(3deg, #ceffb6 0%, #00b5d2 100%);
+        height: 100vh;
+    }
+</style>

@@ -23,6 +23,7 @@
     },
     "dependencies": {
         "element-ui": "^2.4.0",
+        "rainbow-code": "^2.1.4",
         "uuid": "^3.2.1",
         "vuex": "^3.0.1"
     }

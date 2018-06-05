@@ -99961,23 +99961,23 @@ var render = function() {
       _c(
         "el-menu-item",
         {
-          attrs: { index: "2", router: "true" },
+          attrs: { index: "3", router: "true" },
           on: {
             click: function($event) {
-              _vm.toRoute("/contact")
+              _vm.toRoute("/experiences")
             }
           }
         },
-        [_vm._v("Contact")]
+        [_vm._v("experiences")]
       ),
       _vm._v(" "),
       _c(
         "el-menu-item",
         {
-          attrs: { index: "3", router: "true" },
+          attrs: { index: "4", router: "true" },
           on: {
             click: function($event) {
-              _vm.toRoute("/experiences")
+              _vm.toRoute("/contact")
             }
           }
         },

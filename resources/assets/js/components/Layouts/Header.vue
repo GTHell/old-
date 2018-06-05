@@ -7,8 +7,8 @@
             <template slot="title">Showcase</template>
             <el-menu-item index="2-1" @click="toRoute('/showcase/shopping-cart')">Shopping Cart</el-menu-item>
         </el-submenu>
-        <el-menu-item index="2" @click="toRoute('/contact')" router='true'>Contact</el-menu-item>
-        <el-menu-item index="3" @click="toRoute('/experiences')" router='true'>Contact</el-menu-item>
+        <el-menu-item index="3" @click="toRoute('/experiences')" router='true'>experiences</el-menu-item>
+        <el-menu-item index="4" @click="toRoute('/contact')" router='true'>Contact</el-menu-item>
     </el-menu>
 </template>
 

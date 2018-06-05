@@ -1,6 +1,7 @@
 import Home from './components/Home/Home.vue';
 import Contact from './components/Contact/Contact.vue';
-import ShoppingCart from './components/ShoppingCart/ShoppingCart.vue';
+import ShoppingCart from './components/Showcase/ShoppingCart/ShoppingCart';
+import Experience from './components/Experience/ExperienceIndex';
 
 export default [
     {
@@ -14,5 +15,9 @@ export default [
     {
         path: '/showcase/shopping-cart',
         component: ShoppingCart
+    },
+    {
+        path: '/experiences',
+        component: Experience
     }
 ]

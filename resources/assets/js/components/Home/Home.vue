@@ -2,7 +2,7 @@
     <el-container>
         <el-main class="main">
             <el-row :gutter="10" class='my-profile'>
-                <el-col :span="12" class="main-profile" :xs="24" :sm="12" :md="12">
+                <el-col :span="6" class="main-profile" :xs="24" :sm="12" :md="12" :lg="12" :xl="4">
                     <div class="grid-content">
                         <el-row :gutter="0">
                             <el-col :span="8">
@@ -47,10 +47,19 @@
 
     .my-img {
         border-radius: 50%;
-        width: 120px;
-        height: 120px;
+        border: 3px dashed steelblue;
+        width: 160px;
+        height: 160px;
         overflow: hidden;
+        margin-left: 50%;
+        transform: translateX(-50%);
         /*background: url('../photos/sith.jpg');*/
+    }
+
+    .my-img img{
+        width: 160px;
+        height: 160px;
+        object-fit: cover;
     }
 
     .main {

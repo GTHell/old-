@@ -14,14 +14,15 @@
                                     width="40%"
                                     :before-close="handleClose">
                                 <div v-for="item in carts">
-                                    <p>
+                                    <div>
                                         <span class="text-success"><strong>Item:</strong></span> {{item.name}} ,
-                                        <span class="text-success"><strong>Price:</strong></span> {{item.price | currency}},
+                                        <span class="text-success"><strong>Price:</strong></span> {{item.price |
+                                        currency}},
                                         <span class="text-success"><strong>QTY:</strong></span> {{ item.qty }}
                                         <button class="btn btn-info" @click="incrementToCart(item.id)">+</button>
                                         <button class="btn btn-info" @click="decrementToCart(item.id)">-</button>
                                         <button class="btn btn-danger" @click="deleteFromCart(item.id)">X</button>
-                                    </p>
+                                    </div>
                                 </div>
                                 <span>Total item: </span>
                                 <span>{{ carts.length}}</span>
@@ -35,7 +36,7 @@
                     </el-col>
                 </el-row>
                 <el-row :gutter="20">
-                    <el-col :span="6" :xs="24" v-for="item in items" :key="item.id">
+                    <el-col :span="6" :xs="24" class="item" v-for="item in items" :key="item.id">
                         <div class="grid-content bg-purple">
                             <el-card :body-style="{ padding: '0px' }">
                                 <img :src="item.image"
@@ -73,13 +74,13 @@
             addToCart: function (item) {
                 this.$store.dispatch('addToCart', item);
             },
-            decrementToCart: function(id){
+            decrementToCart: function (id) {
                 this.$store.dispatch('decrementToCart', id);
             },
-            incrementToCart: function(id) {
+            incrementToCart: function (id) {
                 this.$store.dispatch('incrementToCart', id);
             },
-            deleteFromCart: function(id) {
+            deleteFromCart: function (id) {
                 this.$store.dispatch('deleteFromCart', id);
             }
         }
@@ -90,7 +91,7 @@
             )
         },
         filters: {
-            currency: function(value) {
+            currency: function (value) {
                 return '$'.concat(value.toFixed(2));
             }
         }
@@ -126,5 +127,14 @@
 
     .clearfix:after {
         clear: both
+    }
+
+    .item img {
+        width: 300px;
+        height: 300px;
+        object-fit: contain;
+        align-self: center;
+        margin-left: 50%;
+        transform: translateX(-50%);
     }
 </style>

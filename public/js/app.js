@@ -99507,7 +99507,7 @@ exports = module.exports = __webpack_require__(15)(false);
 
 
 // module
-exports.push([module.i, "\n.main-profile[data-v-6a1d0888] {\n    background-color: rgba(255, 255, 255, 0.2);\n}\n.grid-content[data-v-6a1d0888] {\n    padding: 20px;\n}\n@media only screen and (min-width: 768px) {\n.el-col-md-12[data-v-6a1d0888] {\n        width: 50%;\n        margin-left: 25%;\n}\n}\n.my-img[data-v-6a1d0888] {\n    border-radius: 50%;\n    width: 120px;\n    height: 120px;\n    overflow: hidden;\n    /*background: url('../photos/sith.jpg');*/\n}\n.main[data-v-6a1d0888] {\n    background: linear-gradient(3deg, #ceffb6 0%, #00b5d2 100%);\n    height: 100vh;\n}\n", ""]);
+exports.push([module.i, "\n.main-profile[data-v-6a1d0888] {\n    background-color: rgba(255, 255, 255, 0.2);\n}\n.grid-content[data-v-6a1d0888] {\n    padding: 20px;\n}\n@media only screen and (min-width: 768px) {\n.el-col-md-12[data-v-6a1d0888] {\n        width: 50%;\n        margin-left: 25%;\n}\n}\n.my-img[data-v-6a1d0888] {\n    border-radius: 50%;\n    border: 3px dashed steelblue;\n    width: 160px;\n    height: 160px;\n    overflow: hidden;\n    margin-left: 50%;\n    -webkit-transform: translateX(-50%);\n            transform: translateX(-50%);\n    /*background: url('../photos/sith.jpg');*/\n}\n.my-img img[data-v-6a1d0888]{\n    width: 160px;\n    height: 160px;\n    -o-object-fit: cover;\n       object-fit: cover;\n}\n.main[data-v-6a1d0888] {\n    background: linear-gradient(3deg, #ceffb6 0%, #00b5d2 100%);\n    height: 100vh;\n}\n", ""]);
 
 // exports
 
@@ -99568,7 +99568,7 @@ var render = function() {
                 "el-col",
                 {
                   staticClass: "main-profile",
-                  attrs: { span: 12, xs: 24, sm: 12, md: 12 }
+                  attrs: { span: 6, xs: 24, sm: 12, md: 12, lg: 12, xl: 4 }
                 },
                 [
                   _c(
@@ -99779,7 +99779,7 @@ exports = module.exports = __webpack_require__(15)(false);
 
 
 // module
-exports.push([module.i, "\n.time {\n    font-size: 13px;\n    color: #999;\n}\n.bottom {\n    margin-top: 13px;\n    line-height: 12px;\n}\n.button {\n    padding: 0;\n    float: right;\n}\n.image {\n    width: 100%;\n    display: block;\n}\n.clearfix:before,\n.clearfix:after {\n    display: table;\n    content: \"\";\n}\n.clearfix:after {\n    clear: both\n}\n", ""]);
+exports.push([module.i, "\n.time {\n    font-size: 13px;\n    color: #999;\n}\n.bottom {\n    margin-top: 13px;\n    line-height: 12px;\n}\n.button {\n    padding: 0;\n    float: right;\n}\n.image {\n    width: 100%;\n    display: block;\n}\n.clearfix:before,\n.clearfix:after {\n    display: table;\n    content: \"\";\n}\n.clearfix:after {\n    clear: both\n}\n.item img {\n    width: 300px;\n    height: 300px;\n    -o-object-fit: contain;\n       object-fit: contain;\n    -ms-flex-item-align: center;\n        align-self: center;\n    margin-left: 50%;\n    -webkit-transform: translateX(-50%);\n            transform: translateX(-50%);\n}\n", ""]);
 
 // exports
 
@@ -99793,6 +99793,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vuex__ = __webpack_require__(79);
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
+//
 //
 //
 //
@@ -99951,7 +99952,7 @@ var render = function() {
                           [
                             _vm._l(_vm.carts, function(item) {
                               return _c("div", [
-                                _c("p", [
+                                _c("div", [
                                   _c("span", { staticClass: "text-success" }, [
                                     _c("strong", [_vm._v("Item:")])
                                   ]),
@@ -100062,7 +100063,11 @@ var render = function() {
                 _vm._l(_vm.items, function(item) {
                   return _c(
                     "el-col",
-                    { key: item.id, attrs: { span: 6, xs: 24 } },
+                    {
+                      key: item.id,
+                      staticClass: "item",
+                      attrs: { span: 6, xs: 24 }
+                    },
                     [
                       _c(
                         "div",

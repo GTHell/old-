@@ -6,8 +6,8 @@
                     <el-col :span="24" :xs="24">
                         <div class="grid-content bg-purple">
                             <h1>Store item functionality with Single Page Application</h1>
-                            <el-button type="primary" @click="dialogVisible = true" icon="el-icon-goods"
-                                       circle></el-button>
+                            <!--<el-button type="primary" @click="dialogVisible = true" icon="el-icon-goods"-->
+                                       <!--circle></el-button>-->
                             <el-dialog
                                     title="Cart"
                                     :visible.sync="dialogVisible"
@@ -34,6 +34,9 @@
                             </el-dialog>
                         </div>
                     </el-col>
+                </el-row>
+                <el-row>
+                    <el-button type="success" @click="toRoute('/showcase/shopping-cart/cart')">Cart</el-button>
                 </el-row>
                 <el-row :gutter="20">
                     <el-col :span="6" :xs="24" class="item" v-for="item in items" :key="item.id">
@@ -82,6 +85,9 @@
             },
             deleteFromCart: function (id) {
                 this.$store.dispatch('deleteFromCart', id);
+            },
+            toRoute: function(path) {
+                this.$router.push(path);
             }
         }
         ,

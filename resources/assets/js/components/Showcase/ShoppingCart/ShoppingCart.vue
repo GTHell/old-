@@ -1,64 +1,20 @@
 <template>
     <div>
-        <el-container>
-            <el-main>
-                <el-row :gutter="20">
-                    <el-col :span="24" :xs="24">
-                        <div class="grid-content bg-purple">
-                            <h1>Store item functionality with Single Page Application</h1>
-                            <!--<el-button type="primary" @click="dialogVisible = true" icon="el-icon-goods"-->
-                                       <!--circle></el-button>-->
-                            <el-dialog
-                                    title="Cart"
-                                    :visible.sync="dialogVisible"
-                                    width="40%"
-                                    :before-close="handleClose">
-                                <div v-for="item in carts">
-                                    <div>
-                                        <span class="text-success"><strong>Item:</strong></span> {{item.name}} ,
-                                        <span class="text-success"><strong>Price:</strong></span> {{item.price |
-                                        currency}},
-                                        <span class="text-success"><strong>QTY:</strong></span> {{ item.qty }}
-                                        <button class="btn btn-info" @click="incrementToCart(item.id)">+</button>
-                                        <button class="btn btn-info" @click="decrementToCart(item.id)">-</button>
-                                        <button class="btn btn-danger" @click="deleteFromCart(item.id)">X</button>
-                                    </div>
-                                </div>
-                                <span>Total item: </span>
-                                <span>{{ carts.length}}</span>
-                                <span slot="footer" class="dialog-footer">
-                                <!--<el-button @click="dialogVisible = false">Cancel</el-button>-->
-                                    <!--<el-button type="primary" @click="dialogVisible = false">Confirm</el-button>-->
-                                    <el-button type="primary" @click="dialogVisible = false">Checkout</el-button>
-                              </span>
-                            </el-dialog>
-                        </div>
-                    </el-col>
-                </el-row>
-                <el-row>
-                    <el-button type="success" @click="toRoute('/showcase/shopping-cart/cart')">Cart</el-button>
-                </el-row>
-                <el-row :gutter="20">
-                    <el-col :span="6" :xs="24" class="item" v-for="item in items" :key="item.id">
-                        <div class="grid-content bg-purple">
-                            <el-card :body-style="{ padding: '0px' }">
-                                <img :src="item.image"
-                                     class="image">
-                                <div style="padding: 14px;">
-                                    <span>{{ item.name }}</span>
-                                    <span>{{ item.price | currency}}</span>
-                                    <div class="bottom clearfix">
-                                        <time class="time">{{ currentDate }}</time>
-                                        <el-button type="text" @click="addToCart(item)" class="button">Add To Cart
-                                        </el-button>
-                                    </div>
-                                </div>
-                            </el-card>
-                        </div>
-                    </el-col>
-                </el-row>
-            </el-main>
-        </el-container>
+        <button @click="toRoute('/showcase/shopping-cart/cart')">Cart</button>
+        <div class="item col-md-4" v-for="item in items" :key="item.id">
+            <div class="grid-content bg-purple">
+                <img :src="item.image"
+                     class="image">
+                <div style="padding: 14px;">
+                    <span>{{ item.name }}</span>
+                    <span>{{ item.price | currency}}</span>
+                    <div class="bottom clearfix">
+                        <time class="time">{{ currentDate }}</time>
+                        <button type="text" @click="addToCart(item)" class="btn btn-success">Add To Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </template>
 
@@ -86,7 +42,7 @@
             deleteFromCart: function (id) {
                 this.$store.dispatch('deleteFromCart', id);
             },
-            toRoute: function(path) {
+            toRoute: function (path) {
                 this.$router.push(path);
             }
         }

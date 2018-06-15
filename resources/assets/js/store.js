@@ -61,7 +61,8 @@ let mutations = {
             item.qty++;
         } else {
             let adjustItem = payload;
-            adjustItem.qty = 1;
+            // adjustItem.qty = 1;
+            Vue.set(adjustItem, 'qty', 1);
             state.carts.push(adjustItem);
             // Vue.set(state.carts.item, state.carts.indexOf(item), adjustItem);
         }

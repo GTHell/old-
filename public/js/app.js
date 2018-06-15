@@ -99182,7 +99182,8 @@ var mutations = {
             item.qty++;
         } else {
             var adjustItem = payload;
-            adjustItem.qty = 1;
+            // adjustItem.qty = 1;
+            __WEBPACK_IMPORTED_MODULE_0_vue___default.a.set(adjustItem, 'qty', 1);
             state.carts.push(adjustItem);
             // Vue.set(state.carts.item, state.carts.indexOf(item), adjustItem);
         }

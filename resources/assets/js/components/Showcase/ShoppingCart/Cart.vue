@@ -20,8 +20,9 @@
                         <th scope="row">{{ item.name }}</th>
                         <td>
                             <div class="input-group">
-                                <input type="number" min="1"
-                                       oninput="this.value=(this.value === null) ? (1/1) : this.value;"
+                                <input type="number"
+                                       min="1"
+                                       oninput="this.value=(this.value === null) ? 1 : this.value;"
                                        class="form-control" :value="item.qty" aria-label="Recipient's username"
                                        aria-describedby="basic-addon2">
                                 <div class="input-group-append">

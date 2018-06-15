@@ -2,8 +2,10 @@
 	<div class="container">
 		<div class="row my-3">
 			<button class="btn btn-dark btn-block" @click="toRoute('/showcase/shopping-cart/cart')">Cart</button>
-			<div class="item col-md-4 col-xs-12" v-for="item in items" :key="item.id">
-				<div class="row my-2">
+		</div>
+		<div class="row my-2">
+			<div class="item col-md-4 col-xs-12 " v-for="item in items" :key="item.id">
+				<!--<div class="row my-2">-->
 					<div class="card">
 						<div class="product--image">
 							<img :src="item.image" class="image card-img-top">
@@ -15,7 +17,7 @@
 							<button type="text" @click="addToCart(item)" class="btn btn-block btn-dark">Add To Cart</button>
 						</div>
 					</div>
-				</div>
+				<!--</div>-->
 			</div>
 		</div>
 	</div>
@@ -49,6 +51,10 @@
 </script>
 
 <style scoped lang="scss">
+	.product--image {
+		overflow: hidden;
+	}
+	
 	.product--image img {
 		display: block;
 		width: 300px;

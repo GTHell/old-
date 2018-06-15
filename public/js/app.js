@@ -99128,121 +99128,122 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_1_vuex
 
 // @STATE: return object of datas
 var state = {
-    items: [{
-        id: __WEBPACK_IMPORTED_MODULE_2_uuid___default.a.v4(),
-        name: 'shoes',
-        price: 9.99,
-        qty: 1,
-        image: "https://dsw.scene7.com/is/image/DSWShoes/377442_001_ss_01?$pdp-image$"
-    }, {
-        id: __WEBPACK_IMPORTED_MODULE_2_uuid___default.a.v4(),
-        name: 'pant',
-        qty: 1,
-        price: 9.99,
-        image: "https://images.thenorthface.com/is/image/TheNorthFace/NF0A2TCT_254_hero?$638x745$"
-    }, {
-        id: __WEBPACK_IMPORTED_MODULE_2_uuid___default.a.v4(),
-        name: 'shirt',
-        price: 9.99,
-        qty: 1,
-        image: "http://brandstore.vistaprint.in/render/undecorated/product/PVAG-0Q4K507W3K1Y/RS-K82Q06W655QY/jpeg?compression=95&width=700"
-    }, {
-        id: __WEBPACK_IMPORTED_MODULE_2_uuid___default.a.v4(),
-        name: 'watch',
-        price: 9.99,
-        qty: 1,
-        image: "http://cdn.shopify.com/s/files/1/0377/2037/products/Mens37.Front_e0435337-82ea-4472-86aa-0e34e1b2c3e8_grande.jpg?v=1510684726"
-    }],
-    carts: [{
-        id: __WEBPACK_IMPORTED_MODULE_2_uuid___default.a.v4(),
-        name: 'watch',
-        qty: 1,
-        price: 9.99
-    }]
+	items: [{
+		id: __WEBPACK_IMPORTED_MODULE_2_uuid___default.a.v4(),
+		name: 'shoes',
+		price: 9.99,
+		qty: 1,
+		image: "https://dsw.scene7.com/is/image/DSWShoes/377442_001_ss_01?$pdp-image$"
+	}, {
+		id: __WEBPACK_IMPORTED_MODULE_2_uuid___default.a.v4(),
+		name: 'pant',
+		qty: 1,
+		price: 9.99,
+		image: "https://images.thenorthface.com/is/image/TheNorthFace/NF0A2TCT_254_hero?$638x745$"
+	}, {
+		id: __WEBPACK_IMPORTED_MODULE_2_uuid___default.a.v4(),
+		name: 'shirt',
+		price: 9.99,
+		qty: 1,
+		image: "http://brandstore.vistaprint.in/render/undecorated/product/PVAG-0Q4K507W3K1Y/RS-K82Q06W655QY/jpeg?compression=95&width=700"
+	}, {
+		id: __WEBPACK_IMPORTED_MODULE_2_uuid___default.a.v4(),
+		name: 'watch',
+		price: 9.99,
+		qty: 1,
+		image: "http://cdn.shopify.com/s/files/1/0377/2037/products/Mens37.Front_e0435337-82ea-4472-86aa-0e34e1b2c3e8_grande.jpg?v=1510684726"
+	}],
+	carts: [{
+		id: __WEBPACK_IMPORTED_MODULE_2_uuid___default.a.v4(),
+		name: 'watch',
+		qty: 1,
+		price: 9.99
+	}]
 };
 
 // @GETTERS: return getters as computed
 var getters = {
-    items: function items(state) {
-        return state.items;
-    },
-    carts: function carts(state) {
-        return state.carts;
-    }
+	items: function items(state) {
+		return state.items;
+	},
+	carts: function carts(state) {
+		return state.carts;
+	}
 };
 
 // @MUTATIONS: return synchronous data mutation
 var mutations = {
-    ADD_TO_CART: function ADD_TO_CART(state, payload) {
-        var item = _.find(state.carts, function (i) {
-            return i.id === payload.id;
-        });
+	ADD_TO_CART: function ADD_TO_CART(state, payload) {
+		var item = _.find(state.carts, function (i) {
+			return i.id === payload.id;
+		});
 
-        if (item) {
-            item.qty++;
-        } else {
-            var adjustItem = payload;
-            // adjustItem.qty = 1;
-            __WEBPACK_IMPORTED_MODULE_0_vue___default.a.set(adjustItem, 'qty', 1);
-            state.carts.push(adjustItem);
-            // Vue.set(state.carts.item, state.carts.indexOf(item), adjustItem);
-        }
-    },
-    INCREMENT_TO_CART: function INCREMENT_TO_CART(state, payload) {
-        // let item = _.find(state.carts, function(i){ return i.id === payload });
-        var item = null;
-        for (var i = 0; i < state.carts.length; i++) {
-            if (state.carts[i].id === payload) {
-                item = state.carts[i];
-                break;
-            }
-        }
+		if (item) {
+			item.qty++;
+		} else {
+			var adjustItem = payload;
+			// adjustItem.qty = 1;
+			__WEBPACK_IMPORTED_MODULE_0_vue___default.a.set(adjustItem, 'qty', 1);
+			state.carts.push(adjustItem);
+			// Vue.set(state.carts.item, state.carts.indexOf(item), adjustItem);
+		}
+	},
+	INCREMENT_TO_CART: function INCREMENT_TO_CART(state, payload) {
+		// let item = _.find(state.carts, function(i){ return i.id === payload });
+		var item = null;
+		for (var i = 0; i < state.carts.length; i++) {
+			if (state.carts[i].id === payload) {
+				item = state.carts[i];
+				break;
+			}
+		}
 
-        item.qty++;
+		item.qty++;
 
-        console.log(item);
-    },
-    DECREMENT_TO_CART: function DECREMENT_TO_CART(state, payload) {
-        var item = _.find(state.carts, function (i) {
-            return i.id === payload;
-        });
-        var index = state.carts.indexOf(item);
-        if (item.qty === 0) {
-            state.carts.splice(index, 1);
-        } else {
-            item.qty--;
-        }
-    },
-    DELETE_FROM_CART: function DELETE_FROM_CART(state, payload) {
-        var item = _.find(state.carts, function (i) {
-            return i.id === payload;
-        });
-        var index = state.carts.indexOf(item);
-        state.carts.splice(state.carts.indexOf(item), 1);
-    }
+		console.log(item);
+	},
+	DECREMENT_TO_CART: function DECREMENT_TO_CART(state, payload) {
+		var item = _.find(state.carts, function (i) {
+			return i.id === payload;
+		});
+		var index = state.carts.indexOf(item);
+
+		item.qty--;
+
+		if (item.qty < 1) {
+			state.carts.splice(index, 1);
+		}
+	},
+	DELETE_FROM_CART: function DELETE_FROM_CART(state, payload) {
+		var item = _.find(state.carts, function (i) {
+			return i.id === payload;
+		});
+		var index = state.carts.indexOf(item);
+		state.carts.splice(state.carts.indexOf(item), 1);
+	}
 };
 
 // @ACTIONS: return asynchronous data context commit
 var actions = {
-    addToCart: function addToCart(context, payload) {
-        context.commit('ADD_TO_CART', payload);
-    },
-    incrementToCart: function incrementToCart(context, payload) {
-        context.commit('INCREMENT_TO_CART', payload);
-    },
-    decrementToCart: function decrementToCart(context, payload) {
-        context.commit('DECREMENT_TO_CART', payload);
-    },
-    deleteFromCart: function deleteFromCart(context, payload) {
-        context.commit('DELETE_FROM_CART', payload);
-    }
+	addToCart: function addToCart(context, payload) {
+		context.commit('ADD_TO_CART', payload);
+	},
+	incrementToCart: function incrementToCart(context, payload) {
+		context.commit('INCREMENT_TO_CART', payload);
+	},
+	decrementToCart: function decrementToCart(context, payload) {
+		context.commit('DECREMENT_TO_CART', payload);
+	},
+	deleteFromCart: function deleteFromCart(context, payload) {
+		context.commit('DELETE_FROM_CART', payload);
+	}
 };
 
 /* harmony default export */ __webpack_exports__["a"] = (new __WEBPACK_IMPORTED_MODULE_1_vuex__["a" /* default */].Store({
-    state: state,
-    getters: getters,
-    mutations: mutations,
-    actions: actions
+	state: state,
+	getters: getters,
+	mutations: mutations,
+	actions: actions
 }));
 
 /***/ }),
@@ -99806,6 +99807,8 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
+//
+//
 
 
 
@@ -99982,6 +99985,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
+//
 
 
 
@@ -100043,7 +100047,7 @@ var render = function() {
                             type: "number",
                             min: "1",
                             oninput:
-                              "this.value=(this.value === null) ? (1/1) : this.value;",
+                              "this.value=(this.value === null) ? 1 : this.value;",
                             "aria-label": "Recipient's username",
                             "aria-describedby": "basic-addon2"
                           },
@@ -100648,82 +100652,74 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
+    _c("div", { staticClass: "row my-3" }, [
+      _c(
+        "button",
+        {
+          staticClass: "btn btn-dark btn-block",
+          on: {
+            click: function($event) {
+              _vm.toRoute("/showcase/shopping-cart/cart")
+            }
+          }
+        },
+        [_vm._v("Cart")]
+      )
+    ]),
+    _vm._v(" "),
     _c(
       "div",
-      { staticClass: "row my-3" },
-      [
-        _c(
-          "button",
-          {
-            staticClass: "btn btn-dark btn-block",
-            on: {
-              click: function($event) {
-                _vm.toRoute("/showcase/shopping-cart/cart")
-              }
-            }
-          },
-          [_vm._v("Cart")]
-        ),
-        _vm._v(" "),
-        _vm._l(_vm.items, function(item) {
-          return _c(
-            "div",
-            { key: item.id, staticClass: "item col-md-4 col-xs-12" },
-            [
-              _c("div", { staticClass: "row my-2" }, [
-                _c("div", { staticClass: "card" }, [
-                  _c("div", { staticClass: "product--image" }, [
-                    _c("img", {
-                      staticClass: "image card-img-top",
-                      attrs: { src: item.image }
-                    })
+      { staticClass: "row my-2" },
+      _vm._l(_vm.items, function(item) {
+        return _c(
+          "div",
+          { key: item.id, staticClass: "item col-md-4 col-xs-12 " },
+          [
+            _c("div", { staticClass: "card" }, [
+              _c("div", { staticClass: "product--image" }, [
+                _c("img", {
+                  staticClass: "image card-img-top",
+                  attrs: { src: item.image }
+                })
+              ]),
+              _vm._v(" "),
+              _c(
+                "div",
+                { staticClass: "card-body", staticStyle: { padding: "14px" } },
+                [
+                  _c("h4", { staticClass: "card-title" }, [
+                    _vm._v(_vm._s(item.name))
+                  ]),
+                  _vm._v(" "),
+                  _c("p", { staticClass: "card-text" }, [
+                    _vm._v(
+                      "This is example an example item and I'm looking to improving it."
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("p", [
+                    _vm._v(_vm._s(_vm._f("currency")(item.price)) + " / Unit")
                   ]),
                   _vm._v(" "),
                   _c(
-                    "div",
+                    "button",
                     {
-                      staticClass: "card-body",
-                      staticStyle: { padding: "14px" }
+                      staticClass: "btn btn-block btn-dark",
+                      attrs: { type: "text" },
+                      on: {
+                        click: function($event) {
+                          _vm.addToCart(item)
+                        }
+                      }
                     },
-                    [
-                      _c("h4", { staticClass: "card-title" }, [
-                        _vm._v(_vm._s(item.name))
-                      ]),
-                      _vm._v(" "),
-                      _c("p", { staticClass: "card-text" }, [
-                        _vm._v(
-                          "This is example an example item and I'm looking to improving it."
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("p", [
-                        _vm._v(
-                          _vm._s(_vm._f("currency")(item.price)) + " / Unit"
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c(
-                        "button",
-                        {
-                          staticClass: "btn btn-block btn-dark",
-                          attrs: { type: "text" },
-                          on: {
-                            click: function($event) {
-                              _vm.addToCart(item)
-                            }
-                          }
-                        },
-                        [_vm._v("Add To Cart")]
-                      )
-                    ]
+                    [_vm._v("Add To Cart")]
                   )
-                ])
-              ])
-            ]
-          )
-        })
-      ],
-      2
+                ]
+              )
+            ])
+          ]
+        )
+      })
     )
   ])
 }
@@ -100772,7 +100768,7 @@ exports = module.exports = __webpack_require__(8)(false);
 
 
 // module
-exports.push([module.i, "\n.product--image img[data-v-1b804cc4] {\n  display: block;\n  width: 300px;\n  height: 300px;\n  -o-object-fit: contain;\n     object-fit: contain;\n  -ms-flex-item-align: center;\n      align-self: center;\n  margin-left: 50%;\n  -webkit-transform: translateX(-50%);\n          transform: translateX(-50%);\n}\n\n/*.time {*/\n/*font-size: 13px;*/\n/*color: #999;*/\n/*}*/\n/*.bottom {*/\n/*margin-top: 13px;*/\n/*line-height: 12px;*/\n/*}*/\n/*.button {*/\n/*padding: 0;*/\n/*float: right;*/\n/*}*/\n/*.image {*/\n/*!*width: 100%;*!*/\n/*!*display: block;*!*/\n/*}*/\n/*.clearfix:before,*/\n/*.clearfix:after {*/\n/*display: table;*/\n/*content: \"\";*/\n/*}*/\n/*.clearfix:after {*/\n/*clear: both*/\n/*}*/\n/*.item img {*/\n/*width: 300px;*/\n/*height: 300px;*/\n/*object-fit: contain;*/\n/*align-self: center;*/\n/*margin-left: 50%;*/\n/*transform: translateX(-50%);*/\n/*}*/\n", ""]);
+exports.push([module.i, "\n.product--image[data-v-1b804cc4] {\n  overflow: hidden;\n}\n.product--image img[data-v-1b804cc4] {\n  display: block;\n  width: 300px;\n  height: 300px;\n  -o-object-fit: contain;\n     object-fit: contain;\n  -ms-flex-item-align: center;\n      align-self: center;\n  margin-left: 50%;\n  -webkit-transform: translateX(-50%);\n          transform: translateX(-50%);\n}\n\n/*.time {*/\n/*font-size: 13px;*/\n/*color: #999;*/\n/*}*/\n/*.bottom {*/\n/*margin-top: 13px;*/\n/*line-height: 12px;*/\n/*}*/\n/*.button {*/\n/*padding: 0;*/\n/*float: right;*/\n/*}*/\n/*.image {*/\n/*!*width: 100%;*!*/\n/*!*display: block;*!*/\n/*}*/\n/*.clearfix:before,*/\n/*.clearfix:after {*/\n/*display: table;*/\n/*content: \"\";*/\n/*}*/\n/*.clearfix:after {*/\n/*clear: both*/\n/*}*/\n/*.item img {*/\n/*width: 300px;*/\n/*height: 300px;*/\n/*object-fit: contain;*/\n/*align-self: center;*/\n/*margin-left: 50%;*/\n/*transform: translateX(-50%);*/\n/*}*/\n", ""]);
 
 // exports
 

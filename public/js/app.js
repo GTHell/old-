@@ -99728,19 +99728,19 @@ if (false) {
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(212)
+  __webpack_require__(241)
 }
 var normalizeComponent = __webpack_require__(9)
 /* script */
 var __vue_script__ = __webpack_require__(214)
 /* template */
-var __vue_template__ = __webpack_require__(215)
+var __vue_template__ = __webpack_require__(240)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
 var __vue_styles__ = injectStyle
 /* scopeId */
-var __vue_scopeId__ = null
+var __vue_scopeId__ = "data-v-1b804cc4"
 /* moduleIdentifier (server only) */
 var __vue_module_identifier__ = null
 var Component = normalizeComponent(
@@ -99773,46 +99773,8 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 212 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__(213);
-if(typeof content === 'string') content = [[module.i, content, '']];
-if(content.locals) module.exports = content.locals;
-// add the styles to the DOM
-var update = __webpack_require__(17)("694ecb0b", content, false, {});
-// Hot Module Replacement
-if(false) {
- // When the styles change, update the <style> tags
- if(!content.locals) {
-   module.hot.accept("!!../../../../../../node_modules/css-loader/index.js!../../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-1b804cc4\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./ShoppingCart.vue", function() {
-     var newContent = require("!!../../../../../../node_modules/css-loader/index.js!../../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-1b804cc4\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./ShoppingCart.vue");
-     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-     update(newContent);
-   });
- }
- // When the module is disposed, remove the <style> tags
- module.hot.dispose(function() { update(); });
-}
-
-/***/ }),
-/* 213 */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(8)(false);
-// imports
-
-
-// module
-exports.push([module.i, "\n.time {\n    font-size: 13px;\n    color: #999;\n}\n.bottom {\n    margin-top: 13px;\n    line-height: 12px;\n}\n.button {\n    padding: 0;\n    float: right;\n}\n.image {\n    width: 100%;\n    display: block;\n}\n.clearfix:before,\n.clearfix:after {\n    display: table;\n    content: \"\";\n}\n.clearfix:after {\n    clear: both\n}\n.item img {\n    width: 300px;\n    height: 300px;\n    -o-object-fit: contain;\n       object-fit: contain;\n    -ms-flex-item-align: center;\n        align-self: center;\n    margin-left: 50%;\n    -webkit-transform: translateX(-50%);\n            transform: translateX(-50%);\n}\n", ""]);
-
-// exports
-
-
-/***/ }),
+/* 212 */,
+/* 213 */,
 /* 214 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -99841,115 +99803,49 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
+//
+//
+//
 
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-    name: "ShoppingCart",
-    data: function data() {
-        return {
-            dialogVisible: false,
-            currentDate: new Date()
-        };
-    },
+	name: "ShoppingCart",
+	data: function data() {
+		return {
+			dialogVisible: false,
+			currentDate: new Date()
+		};
+	},
 
-    methods: {
-        addToCart: function addToCart(item) {
-            this.$store.dispatch('addToCart', item);
-        },
-        decrementToCart: function decrementToCart(id) {
-            this.$store.dispatch('decrementToCart', id);
-        },
-        incrementToCart: function incrementToCart(id) {
-            this.$store.dispatch('incrementToCart', id);
-        },
-        deleteFromCart: function deleteFromCart(id) {
-            this.$store.dispatch('deleteFromCart', id);
-        },
-        toRoute: function toRoute(path) {
-            this.$router.push(path);
-        }
-    },
+	methods: {
+		addToCart: function addToCart(item) {
+			this.$store.dispatch('addToCart', item);
+		},
+		decrementToCart: function decrementToCart(id) {
+			this.$store.dispatch('decrementToCart', id);
+		},
+		incrementToCart: function incrementToCart(id) {
+			this.$store.dispatch('incrementToCart', id);
+		},
+		deleteFromCart: function deleteFromCart(id) {
+			this.$store.dispatch('deleteFromCart', id);
+		},
+		toRoute: function toRoute(path) {
+			this.$router.push(path);
+		}
+	},
 
-    computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["b" /* mapGetters */])(['items', 'carts'])),
-    filters: {
-        currency: function currency(value) {
-            return '$'.concat(value.toFixed(2));
-        }
-    }
+	computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["b" /* mapGetters */])(['items', 'carts'])),
+	filters: {
+		currency: function currency(value) {
+			return 'US $'.concat(value.toFixed(2));
+		}
+	}
 });
 
 /***/ }),
-/* 215 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    [
-      _c(
-        "button",
-        {
-          on: {
-            click: function($event) {
-              _vm.toRoute("/showcase/shopping-cart/cart")
-            }
-          }
-        },
-        [_vm._v("Cart")]
-      ),
-      _vm._v(" "),
-      _vm._l(_vm.items, function(item) {
-        return _c("div", { key: item.id, staticClass: "item col-md-4" }, [
-          _c("div", { staticClass: "grid-content bg-purple" }, [
-            _c("img", { staticClass: "image", attrs: { src: item.image } }),
-            _vm._v(" "),
-            _c("div", { staticStyle: { padding: "14px" } }, [
-              _c("span", [_vm._v(_vm._s(item.name))]),
-              _vm._v(" "),
-              _c("span", [_vm._v(_vm._s(_vm._f("currency")(item.price)))]),
-              _vm._v(" "),
-              _c("div", { staticClass: "bottom clearfix" }, [
-                _c("time", { staticClass: "time" }, [
-                  _vm._v(_vm._s(_vm.currentDate))
-                ]),
-                _vm._v(" "),
-                _c(
-                  "button",
-                  {
-                    staticClass: "btn btn-success",
-                    attrs: { type: "text" },
-                    on: {
-                      click: function($event) {
-                        _vm.addToCart(item)
-                      }
-                    }
-                  },
-                  [_vm._v("Add To Cart")]
-                )
-              ])
-            ])
-          ])
-        ])
-      })
-    ],
-    2
-  )
-}
-var staticRenderFns = []
-render._withStripped = true
-module.exports = { render: render, staticRenderFns: staticRenderFns }
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-1b804cc4", module.exports)
-  }
-}
-
-/***/ }),
+/* 215 */,
 /* 216 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -100102,7 +99998,6 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
-//
 
 
 
@@ -100134,9 +100029,7 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container main" }, [
-    _c("div", { staticClass: "row" }, [
-      _c("h1", [_vm._v("Cart ")]),
-      _vm._v(" "),
+    _c("div", { staticClass: "row my-3" }, [
       _c(
         "button",
         { staticClass: "btn btn-dark btn-block", on: { click: _vm.back } },
@@ -100758,6 +100651,141 @@ if (false) {
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 237 */,
+/* 238 */,
+/* 239 */,
+/* 240 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "container" }, [
+    _c(
+      "div",
+      { staticClass: "row my-3" },
+      [
+        _c(
+          "button",
+          {
+            staticClass: "btn btn-dark btn-block",
+            on: {
+              click: function($event) {
+                _vm.toRoute("/showcase/shopping-cart/cart")
+              }
+            }
+          },
+          [_vm._v("Cart")]
+        ),
+        _vm._v(" "),
+        _vm._l(_vm.items, function(item) {
+          return _c("div", { key: item.id, staticClass: "item col-md-4" }, [
+            _c("div", { staticClass: "row my-2" }, [
+              _c("div", { staticClass: "card" }, [
+                _c("div", { staticClass: "product--image" }, [
+                  _c("img", {
+                    staticClass: "image card-img-top",
+                    attrs: { src: item.image }
+                  })
+                ]),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  {
+                    staticClass: "card-body",
+                    staticStyle: { padding: "14px" }
+                  },
+                  [
+                    _c("h4", { staticClass: "card-title" }, [
+                      _vm._v(_vm._s(item.name))
+                    ]),
+                    _vm._v(" "),
+                    _c("p", { staticClass: "card-text" }, [
+                      _vm._v(
+                        "This is example an example item and I'm looking to improving it."
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c("p", [
+                      _vm._v(_vm._s(_vm._f("currency")(item.price)) + " / Unit")
+                    ]),
+                    _vm._v(" "),
+                    _c(
+                      "button",
+                      {
+                        staticClass: "btn btn-block btn-dark",
+                        attrs: { type: "text" },
+                        on: {
+                          click: function($event) {
+                            _vm.addToCart(item)
+                          }
+                        }
+                      },
+                      [_vm._v("Add To Cart")]
+                    )
+                  ]
+                )
+              ])
+            ])
+          ])
+        })
+      ],
+      2
+    )
+  ])
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-1b804cc4", module.exports)
+  }
+}
+
+/***/ }),
+/* 241 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(242);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(17)("4f02433f", content, false, {});
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../../../../node_modules/css-loader/index.js!../../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-1b804cc4\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../../../node_modules/sass-loader/lib/loader.js!../../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./ShoppingCart.vue", function() {
+     var newContent = require("!!../../../../../../node_modules/css-loader/index.js!../../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-1b804cc4\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../../../node_modules/sass-loader/lib/loader.js!../../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./ShoppingCart.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 242 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(8)(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n.product--image img[data-v-1b804cc4] {\n  display: block;\n  width: 300px;\n  height: 300px;\n  -o-object-fit: contain;\n     object-fit: contain;\n  -ms-flex-item-align: center;\n      align-self: center;\n  margin-left: 50%;\n  -webkit-transform: translateX(-50%);\n          transform: translateX(-50%);\n}\n\n/*.time {*/\n/*font-size: 13px;*/\n/*color: #999;*/\n/*}*/\n/*.bottom {*/\n/*margin-top: 13px;*/\n/*line-height: 12px;*/\n/*}*/\n/*.button {*/\n/*padding: 0;*/\n/*float: right;*/\n/*}*/\n/*.image {*/\n/*!*width: 100%;*!*/\n/*!*display: block;*!*/\n/*}*/\n/*.clearfix:before,*/\n/*.clearfix:after {*/\n/*display: table;*/\n/*content: \"\";*/\n/*}*/\n/*.clearfix:after {*/\n/*clear: both*/\n/*}*/\n/*.item img {*/\n/*width: 300px;*/\n/*height: 300px;*/\n/*object-fit: contain;*/\n/*align-self: center;*/\n/*margin-left: 50%;*/\n/*transform: translateX(-50%);*/\n/*}*/\n", ""]);
+
+// exports
+
 
 /***/ })
 /******/ ]);

@@ -1,7 +1,6 @@
 <template>
     <div class="container main">
-        <div class="row">
-            <h1>Cart </h1>
+        <div class="row my-3">
             <button class="btn btn-dark btn-block" @click="back">Back</button>
         </div>
         <div class="row my-2" v-if="carts.length">

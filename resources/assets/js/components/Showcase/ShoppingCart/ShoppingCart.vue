@@ -2,7 +2,7 @@
 	<div class="container">
 		<div class="row my-3">
 			<button class="btn btn-dark btn-block" @click="toRoute('/showcase/shopping-cart/cart')">Cart</button>
-			<div class="item col-md-4" v-for="item in items" :key="item.id">
+			<div class="item col-md-4 col-xs-12" v-for="item in items" :key="item.id">
 				<div class="row my-2">
 					<div class="card">
 						<div class="product--image">
@@ -26,24 +26,9 @@
 	
 	export default {
 		name: "ShoppingCart",
-		data() {
-			return {
-				dialogVisible: false,
-				currentDate: new Date()
-			}
-		},
 		methods: {
 			addToCart: function (item) {
 				this.$store.dispatch('addToCart', item);
-			},
-			decrementToCart: function (id) {
-				this.$store.dispatch('decrementToCart', id);
-			},
-			incrementToCart: function (id) {
-				this.$store.dispatch('incrementToCart', id);
-			},
-			deleteFromCart: function (id) {
-				this.$store.dispatch('deleteFromCart', id);
 			},
 			toRoute: function (path) {
 				this.$router.push(path);
@@ -52,7 +37,7 @@
 		,
 		computed: {
 			...mapGetters(
-				['items', 'carts']
+				['items']
 			)
 		},
 		filters: {

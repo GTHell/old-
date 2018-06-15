@@ -99811,32 +99811,16 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
 /* harmony default export */ __webpack_exports__["default"] = ({
 	name: "ShoppingCart",
-	data: function data() {
-		return {
-			dialogVisible: false,
-			currentDate: new Date()
-		};
-	},
-
 	methods: {
 		addToCart: function addToCart(item) {
 			this.$store.dispatch('addToCart', item);
-		},
-		decrementToCart: function decrementToCart(id) {
-			this.$store.dispatch('decrementToCart', id);
-		},
-		incrementToCart: function incrementToCart(id) {
-			this.$store.dispatch('incrementToCart', id);
-		},
-		deleteFromCart: function deleteFromCart(id) {
-			this.$store.dispatch('deleteFromCart', id);
 		},
 		toRoute: function toRoute(path) {
 			this.$router.push(path);
 		}
 	},
 
-	computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["b" /* mapGetters */])(['items', 'carts'])),
+	computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["b" /* mapGetters */])(['items'])),
 	filters: {
 		currency: function currency(value) {
 			return 'US $'.concat(value.toFixed(2));
@@ -100682,55 +100666,61 @@ var render = function() {
         ),
         _vm._v(" "),
         _vm._l(_vm.items, function(item) {
-          return _c("div", { key: item.id, staticClass: "item col-md-4" }, [
-            _c("div", { staticClass: "row my-2" }, [
-              _c("div", { staticClass: "card" }, [
-                _c("div", { staticClass: "product--image" }, [
-                  _c("img", {
-                    staticClass: "image card-img-top",
-                    attrs: { src: item.image }
-                  })
-                ]),
-                _vm._v(" "),
-                _c(
-                  "div",
-                  {
-                    staticClass: "card-body",
-                    staticStyle: { padding: "14px" }
-                  },
-                  [
-                    _c("h4", { staticClass: "card-title" }, [
-                      _vm._v(_vm._s(item.name))
-                    ]),
-                    _vm._v(" "),
-                    _c("p", { staticClass: "card-text" }, [
-                      _vm._v(
-                        "This is example an example item and I'm looking to improving it."
-                      )
-                    ]),
-                    _vm._v(" "),
-                    _c("p", [
-                      _vm._v(_vm._s(_vm._f("currency")(item.price)) + " / Unit")
-                    ]),
-                    _vm._v(" "),
-                    _c(
-                      "button",
-                      {
-                        staticClass: "btn btn-block btn-dark",
-                        attrs: { type: "text" },
-                        on: {
-                          click: function($event) {
-                            _vm.addToCart(item)
+          return _c(
+            "div",
+            { key: item.id, staticClass: "item col-md-4 col-xs-12" },
+            [
+              _c("div", { staticClass: "row my-2" }, [
+                _c("div", { staticClass: "card" }, [
+                  _c("div", { staticClass: "product--image" }, [
+                    _c("img", {
+                      staticClass: "image card-img-top",
+                      attrs: { src: item.image }
+                    })
+                  ]),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      staticClass: "card-body",
+                      staticStyle: { padding: "14px" }
+                    },
+                    [
+                      _c("h4", { staticClass: "card-title" }, [
+                        _vm._v(_vm._s(item.name))
+                      ]),
+                      _vm._v(" "),
+                      _c("p", { staticClass: "card-text" }, [
+                        _vm._v(
+                          "This is example an example item and I'm looking to improving it."
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("p", [
+                        _vm._v(
+                          _vm._s(_vm._f("currency")(item.price)) + " / Unit"
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c(
+                        "button",
+                        {
+                          staticClass: "btn btn-block btn-dark",
+                          attrs: { type: "text" },
+                          on: {
+                            click: function($event) {
+                              _vm.addToCart(item)
+                            }
                           }
-                        }
-                      },
-                      [_vm._v("Add To Cart")]
-                    )
-                  ]
-                )
+                        },
+                        [_vm._v("Add To Cart")]
+                      )
+                    ]
+                  )
+                ])
               ])
-            ])
-          ])
+            ]
+          )
         })
       ],
       2

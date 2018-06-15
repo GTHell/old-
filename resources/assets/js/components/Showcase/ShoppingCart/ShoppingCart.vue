@@ -1,12 +1,12 @@
 <template>
 	<div class="container">
-		<div class="row my-3">
+		<div class="row mt-3">
 			<button class="btn btn-dark btn-block" @click="toRoute('/showcase/shopping-cart/cart')">Cart</button>
 		</div>
-		<div class="row my-2">
-			<div class="item col-md-4 col-xs-12 " v-for="item in items" :key="item.id">
+		<div class="row mt-1">
+			<div class="item col-md-4 col-xs-12" v-for="item in items" :key="item.id">
 				<!--<div class="row my-2">-->
-					<div class="card">
+					<div class="card my-2">
 						<div class="product--image">
 							<img :src="item.image" class="image card-img-top">
 						</div>

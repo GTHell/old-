@@ -99153,12 +99153,7 @@ var state = {
 		qty: 1,
 		image: "http://cdn.shopify.com/s/files/1/0377/2037/products/Mens37.Front_e0435337-82ea-4472-86aa-0e34e1b2c3e8_grande.jpg?v=1510684726"
 	}],
-	carts: [{
-		id: __WEBPACK_IMPORTED_MODULE_2_uuid___default.a.v4(),
-		name: 'watch',
-		qty: 1,
-		price: 9.99
-	}]
+	carts: []
 };
 
 // @GETTERS: return getters as computed
@@ -100090,7 +100085,22 @@ var render = function() {
                     _vm._v(" "),
                     _c("td", [_vm._v(_vm._s(item.price * item.qty))]),
                     _vm._v(" "),
-                    _vm._m(1, true)
+                    _c("td", [
+                      _c(
+                        "a",
+                        {
+                          staticClass: "btn btn-danger",
+                          attrs: { href: "#" },
+                          on: {
+                            click: function($event) {
+                              $event.preventDefault()
+                              _vm.deleteFromCart(item.id)
+                            }
+                          }
+                        },
+                        [_vm._v("Remove")]
+                      )
+                    ])
                   ])
                 })
               )
@@ -100099,7 +100109,11 @@ var render = function() {
           _vm._v(" "),
           _c("div", { staticClass: "col-md-4 col-xs-12" }, [_vm._v("Hello 2")])
         ])
-      : _c("div", [_c("h1", [_vm._v("Sorry, you have no items in cart")])])
+      : _c("div", [
+          _c("h2", { staticClass: "mx-auto", staticStyle: { width: "60%" } }, [
+            _vm._v("Sorry, you have no items in cart")
+          ])
+        ])
   ])
 }
 var staticRenderFns = [
@@ -100120,12 +100134,6 @@ var staticRenderFns = [
         _c("th", { attrs: { scope: "col" } }, [_vm._v("ACTIONS")])
       ])
     ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("td", [_c("a", { attrs: { href: "" } }, [_vm._v("Remove")])])
   }
 ]
 render._withStripped = true
@@ -100652,7 +100660,7 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
-    _c("div", { staticClass: "row my-3" }, [
+    _c("div", { staticClass: "row mt-3" }, [
       _c(
         "button",
         {
@@ -100669,13 +100677,13 @@ var render = function() {
     _vm._v(" "),
     _c(
       "div",
-      { staticClass: "row my-2" },
+      { staticClass: "row mt-1" },
       _vm._l(_vm.items, function(item) {
         return _c(
           "div",
-          { key: item.id, staticClass: "item col-md-4 col-xs-12 " },
+          { key: item.id, staticClass: "item col-md-4 col-xs-12" },
           [
-            _c("div", { staticClass: "card" }, [
+            _c("div", { staticClass: "card my-2" }, [
               _c("div", { staticClass: "product--image" }, [
                 _c("img", {
                   staticClass: "image card-img-top",

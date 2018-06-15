@@ -38,7 +38,7 @@
                         <td>{{ item.price }}</td>
                         <td>{{ item.price * item.qty}}</td>
                         <td>
-                            <a href="">Remove</a>
+                            <a class="btn btn-danger" href="#" @click.prevent="deleteFromCart(item.id)">Remove</a>
                         </td>
                     </tr>
                     </tbody>
@@ -47,7 +47,7 @@
             <div class="col-md-4 col-xs-12">Hello 2</div>
         </div>
         <div v-else>
-            <h1>Sorry, you have no items in cart</h1>
+            <h2 class="mx-auto" style="width: 60%;">Sorry, you have no items in cart</h2>
         </div>
     </div>
 </template>

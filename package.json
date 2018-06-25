@@ -12,6 +12,8 @@
     "devDependencies": {
         "axios": "^0.18",
         "bootstrap": "^4.0.0",
+        "browser-sync": "^2.24.5",
+        "browser-sync-webpack-plugin": "^2.0.1",
         "cross-env": "^5.1",
         "jquery": "^3.2",
         "laravel-mix": "^2.0",
@@ -22,6 +24,7 @@
         "vue-router": "^3.0.1"
     },
     "dependencies": {
+        "chart.js": "^2.7.2",
         "element-ui": "^2.4.0",
         "rainbow-code": "^2.1.4",
         "uuid": "^3.2.1",

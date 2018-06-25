@@ -13,19 +13,4 @@ let mix = require('laravel-mix');
 mix.disableNotifications();
 
 mix.js('resources/assets/js/app.js', 'public/js')
-  .sass('resources/assets/sass/app.scss', 'public/css')
-  .browserSync({
-    files: [
-      'app/**/*',
-      'public/**/*',
-      'resources/views/**/*',
-      'resources/lang/**/*',
-      'routes/**/*'
-    ],
-    notify: {
-      styles: {
-        top: 'auto',
-        bottom: '0'
-      }
-    },
-  });
+   .sass('resources/assets/sass/app.scss', 'public/css');

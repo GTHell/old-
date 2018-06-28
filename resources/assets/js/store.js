@@ -26,7 +26,7 @@ let state = {
 			name: 'shirt',
 			price: 9.99,
 			qty: 1,
-			image: "http://brandstore.vistaprint.in/render/undecorated/product/PVAG-0Q4K507W3K1Y/RS-K82Q06W655QY/jpeg?compression=95&width=700"
+			image: "https://s-media-cache-ak0.pinimg.com/originals/7f/90/e6/7f90e61acf8f5289230c1c34fb95ecec.png"
 		},
 		{
 			id: uuid.v4(),

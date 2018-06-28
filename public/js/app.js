@@ -117818,7 +117818,7 @@ var state = {
 		name: 'shirt',
 		price: 9.99,
 		qty: 1,
-		image: "http://brandstore.vistaprint.in/render/undecorated/product/PVAG-0Q4K507W3K1Y/RS-K82Q06W655QY/jpeg?compression=95&width=700"
+		image: "https://s-media-cache-ak0.pinimg.com/originals/7f/90/e6/7f90e61acf8f5289230c1c34fb95ecec.png"
 	}, {
 		id: __WEBPACK_IMPORTED_MODULE_2_uuid___default.a.v4(),
 		name: 'watch',
@@ -118250,6 +118250,10 @@ module.exports = function listToStyles (parentId, list) {
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_chart_js__ = __webpack_require__(344);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_chart_js___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_chart_js__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Language_vue__ = __webpack_require__(424);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Language_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__Language_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Skill_vue__ = __webpack_require__(429);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Skill_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__Skill_vue__);
 //
 //
 //
@@ -118316,45 +118320,17 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+
+
 
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  name: 'profile',
-  data: function data() {
-    return {
-      data: {
-        labels: ['Javascript', 'Python', 'PHP', 'C#', 'Java', 'C++'],
-        datasets: [{
-          label: 'Language Level',
-          backgroundColor: ['#f1e05a', '#3572A5', '#4F5D95', '#178600', '#b07219', '#f34b7d'],
-          borderColor: 'rgba(0,0,0,0.5)',
-          borderWidth: 0.5,
-          hoverBackgroundColor: 'rgba(200,200,200,0.7)',
-          hoverBorderColor: 'rgba(100,99,100,1)',
-          data: [90, 84, 80, 86, 82, 60]
-        }]
-      },
-      options: {
-        scales: {
-          xAxes: [{
-            ticks: {
-              beginAtZero: true,
-              max: 100,
-              min: 0
-            }
-          }]
-        }
-      }
-    };
-  },
-  mounted: function mounted() {
-    var mySkill = new __WEBPACK_IMPORTED_MODULE_0_chart_js___default.a(document.getElementById('my-skill').getContext('2d'), {
-      type: 'horizontalBar',
-      data: this.data,
-      options: this.options
-    });
-  }
+	name: 'profile',
+	components: {
+		'my-language': __WEBPACK_IMPORTED_MODULE_1__Language_vue___default.a,
+		'my-skill': __WEBPACK_IMPORTED_MODULE_2__Skill_vue___default.a
+	}
 });
 
 /***/ }),
@@ -130968,19 +130944,13 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
-}
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", [
-      _c("section", { staticClass: "main" }, [
-        _c("div", { staticClass: "container my-3" }, [
-          _c("div", { staticClass: "my-img" }, [
-            _c("img", { attrs: { src: "/photos/sith.jpg", alt: "" } })
-          ]),
+  return _c("div", [
+    _c("section", { staticClass: "main" }, [
+      _c(
+        "div",
+        { staticClass: "container my-3" },
+        [
+          _vm._m(0),
           _vm._v(" "),
           _c("h3", [_vm._v("<Greeting/>")]),
           _vm._v(" "),
@@ -130990,62 +130960,79 @@ var staticRenderFns = [
             )
           ]),
           _vm._v(" "),
-          _c("canvas", { attrs: { id: "my-skill" } })
-        ])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "container" }, [
-        _c("div", { staticClass: "row" }, [
-          _c("div", { staticClass: "col-md-12 my-3" }, [
-            _c("section", { attrs: { id: "chart" } }),
-            _vm._v(" "),
-            _c("p", [
-              _vm._v(
-                "\n\t\t\t\t\tI'm a really dedicated person and I'm not giving up something so easily that make other people feeling\n\t\t\t\t\thopeless.\n\t\t\t\t\tUsually, I carry the entire team with me. Believe me or not, I never rage quit in video gamign even my team\n\t\t\t\t\tleft the game. I just keep it cool.\n\t\t\t\t"
-              )
-            ]),
-            _vm._v(" "),
-            _c("p", [
-              _vm._v(
-                "\n\t\t\t\t\tThe above principle also apply to me at my work place. I just keep my good attitude and having a high\n\t\t\t\t\tstandard.\n\t\t\t\t\tWhen I leave my old company I make sure that I set everything up and document everything and teach the new\n\t\t\t\t\tguy.\n\t\t\t\t\tDon't left people and make them hate you.\n\t\t\t\t"
-              )
-            ]),
-            _vm._v(" "),
-            _c("p", [
-              _vm._v(
-                "\n\t\t\t\t\tNo Rage Quit. Responsibility Is My First Priority.\n\t\t\t\t"
-              )
-            ]),
-            _vm._v(" "),
-            _c("p", [
-              _vm._v(
-                "\n\t\t\t\t\tMemorizing is mesmerizing of nothing. I tend to understand thing well and proceed to my copy & paste.\n\t\t\t\t\tDon't close the tab just yet!\n\t\t\t\t"
-              )
-            ]),
-            _vm._v(" "),
-            _c("p", [
-              _vm._v(
-                "\n\t\t\t\t\tI normally test new technology and build some demo in it. People always ask me to demonstrate my project.\n\t\t\t\t\tI'm not that kind of person who like to keep thing in computer. It's kinda sad that most of my demo\n\t\t\t\t\tincluding\n\t\t\t\t\tthe work with Photoshop, Illustrator and other things are not belong to the permanent trash can.\n\t\t\t\t"
-              )
-            ]),
-            _vm._v(" "),
-            _c("p", [
-              _vm._v(
-                "\n\t\t\t\t\tThis is why I'm building this portfolio to prove that I'm actually having something up.\n\t\t\t\t"
-              )
-            ]),
-            _vm._v(" "),
-            _c("p", [
-              _vm._v(
-                "\n\t\t\t\t\tThis server is running vultr with Plesk admin. (I still ssh to the server by default though, so this Plesk\n\t\t\t\t\tadmin is kinda useless).\n\t\t\t\t"
-              )
-            ]),
-            _vm._v(" "),
-            _c("p", [
-              _vm._v(
-                "\n\t\t\t\t\tI have experience working with Laravel framework and setting up server and .... wait! Like I said, I\n\t\t\t\t\tdo anything that I unerstand from setting up webpack from scratch to setup a mail server solution in Centos,\n\t\t\t\t\tconfig mining machine and write API to generate autonomous report. That why my previous Boss want to put\n\t\t\t\t\tchain\n\t\t\t\t\ton me.\n\t\t\t\t"
-              )
-            ])
+          _c("my-skill")
+        ],
+        1
+      )
+    ]),
+    _vm._v(" "),
+    _vm._m(1)
+  ])
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "my-img" }, [
+      _c("img", { attrs: { src: "/photos/sith.jpg", alt: "" } })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "container" }, [
+      _c("div", { staticClass: "row" }, [
+        _c("div", { staticClass: "col-md-12 my-3" }, [
+          _c("section", { attrs: { id: "chart" } }),
+          _vm._v(" "),
+          _c("p", [
+            _vm._v(
+              "\n\t\t\t\t\tI'm a really dedicated person and I'm not giving up something so easily that make other people feeling\n\t\t\t\t\thopeless.\n\t\t\t\t\tUsually, I carry the entire team with me. Believe me or not, I never rage quit in video gamign even my team\n\t\t\t\t\tleft the game. I just keep it cool.\n\t\t\t\t"
+            )
+          ]),
+          _vm._v(" "),
+          _c("p", [
+            _vm._v(
+              "\n\t\t\t\t\tThe above principle also apply to me at my work place. I just keep my good attitude and having a high\n\t\t\t\t\tstandard.\n\t\t\t\t\tWhen I leave my old company I make sure that I set everything up and document everything and teach the new\n\t\t\t\t\tguy.\n\t\t\t\t\tDon't left people and make them hate you.\n\t\t\t\t"
+            )
+          ]),
+          _vm._v(" "),
+          _c("p", [
+            _vm._v(
+              "\n\t\t\t\t\tNo Rage Quit. Responsibility Is My First Priority.\n\t\t\t\t"
+            )
+          ]),
+          _vm._v(" "),
+          _c("p", [
+            _vm._v(
+              "\n\t\t\t\t\tMemorizing is mesmerizing of nothing. I tend to understand thing well and proceed to my copy & paste.\n\t\t\t\t\tDon't close the tab just yet!\n\t\t\t\t"
+            )
+          ]),
+          _vm._v(" "),
+          _c("p", [
+            _vm._v(
+              "\n\t\t\t\t\tI normally test new technology and build some demo in it. People always ask me to demonstrate my project.\n\t\t\t\t\tI'm not that kind of person who like to keep thing in computer. It's kinda sad that most of my demo\n\t\t\t\t\tincluding\n\t\t\t\t\tthe work with Photoshop, Illustrator and other things are not belong to the permanent trash can.\n\t\t\t\t"
+            )
+          ]),
+          _vm._v(" "),
+          _c("p", [
+            _vm._v(
+              "\n\t\t\t\t\tThis is why I'm building this portfolio to prove that I'm actually having something up.\n\t\t\t\t"
+            )
+          ]),
+          _vm._v(" "),
+          _c("p", [
+            _vm._v(
+              "\n\t\t\t\t\tThis server is running vultr with Plesk admin. (I still ssh to the server by default though, so this Plesk\n\t\t\t\t\tadmin is kinda useless).\n\t\t\t\t"
+            )
+          ]),
+          _vm._v(" "),
+          _c("p", [
+            _vm._v(
+              "\n\t\t\t\t\tI have experience working with Laravel framework and setting up server and .... wait! Like I said, I\n\t\t\t\t\tdo anything that I unerstand from setting up webpack from scratch to setup a mail server solution in Centos,\n\t\t\t\t\tconfig mining machine and write API to generate autonomous report. That why my previous Boss want to put\n\t\t\t\t\tchain\n\t\t\t\t\ton me.\n\t\t\t\t"
+            )
           ])
         ])
       ])
@@ -131816,19 +131803,19 @@ if (false) {
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(410)
+  __webpack_require__(421)
 }
 var normalizeComponent = __webpack_require__(14)
 /* script */
 var __vue_script__ = __webpack_require__(412)
 /* template */
-var __vue_template__ = __webpack_require__(418)
+var __vue_template__ = __webpack_require__(423)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
 var __vue_styles__ = injectStyle
 /* scopeId */
-var __vue_scopeId__ = "data-v-66ab2f82"
+var __vue_scopeId__ = null
 /* moduleIdentifier (server only) */
 var __vue_module_identifier__ = null
 var Component = normalizeComponent(
@@ -131861,46 +131848,8 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 410 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__(411);
-if(typeof content === 'string') content = [[module.i, content, '']];
-if(content.locals) module.exports = content.locals;
-// add the styles to the DOM
-var update = __webpack_require__(22)("0cd8f6d9", content, false, {});
-// Hot Module Replacement
-if(false) {
- // When the styles change, update the <style> tags
- if(!content.locals) {
-   module.hot.accept("!!../../../node_modules/css-loader/index.js!../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-66ab2f82\",\"scoped\":true,\"hasInlineConfig\":true}!../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./App.vue", function() {
-     var newContent = require("!!../../../node_modules/css-loader/index.js!../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-66ab2f82\",\"scoped\":true,\"hasInlineConfig\":true}!../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./App.vue");
-     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-     update(newContent);
-   });
- }
- // When the module is disposed, remove the <style> tags
- module.hot.dispose(function() { update(); });
-}
-
-/***/ }),
-/* 411 */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(13)(false);
-// imports
-
-
-// module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
-
-// exports
-
-
-/***/ }),
+/* 410 */,
+/* 411 */,
 /* 412 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -132130,7 +132079,55 @@ if (false) {
 }
 
 /***/ }),
-/* 418 */
+/* 418 */,
+/* 419 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 420 */,
+/* 421 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(422);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(22)("89b8cd50", content, false, {});
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../node_modules/css-loader/index.js!../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-66ab2f82\",\"scoped\":false,\"hasInlineConfig\":true}!../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./App.vue", function() {
+     var newContent = require("!!../../../node_modules/css-loader/index.js!../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-66ab2f82\",\"scoped\":false,\"hasInlineConfig\":true}!../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./App.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 422 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(13)(false);
+// imports
+
+
+// module
+exports.push([module.i, "\nhtml {\n  font-size: 16px;\n}\n@media screen and (min-width: 320px) {\nhtml {\n    font-size: calc(16px + 6 * ((100vw - 320px) / 680));\n}\n}\n@media screen and (min-width: 1000px) {\nhtml {\n    font-size: 22px;\n}\n}\n", ""]);
+
+// exports
+
+
+/***/ }),
+/* 423 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -132155,10 +132152,332 @@ if (false) {
 }
 
 /***/ }),
-/* 419 */
-/***/ (function(module, exports) {
+/* 424 */
+/***/ (function(module, exports, __webpack_require__) {
 
-// removed by extract-text-webpack-plugin
+var disposed = false
+function injectStyle (ssrContext) {
+  if (disposed) return
+  __webpack_require__(425)
+}
+var normalizeComponent = __webpack_require__(14)
+/* script */
+var __vue_script__ = __webpack_require__(427)
+/* template */
+var __vue_template__ = __webpack_require__(428)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = injectStyle
+/* scopeId */
+var __vue_scopeId__ = "data-v-03b01201"
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/assets/js/components/Home/Language.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-03b01201", Component.options)
+  } else {
+    hotAPI.reload("data-v-03b01201", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 425 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(426);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(22)("10392874", content, false, {});
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-03b01201\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Language.vue", function() {
+     var newContent = require("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-03b01201\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Language.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 426 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(13)(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+
+// exports
+
+
+/***/ }),
+/* 427 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_chart_js__ = __webpack_require__(344);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_chart_js___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_chart_js__);
+//
+//
+//
+//
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  name: "profile",
+  data: function data() {
+    return {
+      data: {
+        labels: ["Javascript", "Python", "PHP", "C#", "Java", "C++"],
+        datasets: [{
+          label: "Language Level",
+          backgroundColor: ["#f1e05a", "#3572A5", "#4F5D95", "#178600", "#b07219", "#f34b7d"],
+          borderColor: "rgba(0,0,0,0.5)",
+          borderWidth: 0.5,
+          hoverBackgroundColor: "rgba(200,200,200,0.7)",
+          hoverBorderColor: "rgba(100,99,100,1)",
+          data: [90, 84, 80, 86, 82, 60]
+        }]
+      },
+      options: {
+        scales: {
+          xAxes: [{
+            ticks: {
+              beginAtZero: true,
+              max: 100,
+              min: 0
+            }
+          }]
+        }
+      }
+    };
+  },
+  mounted: function mounted() {
+    var mySkill = new __WEBPACK_IMPORTED_MODULE_0_chart_js___default.a(document.getElementById("my-chart").getContext("2d"), {
+      type: "horizontalBar",
+      data: this.data,
+      options: this.options
+    });
+  }
+});
+
+/***/ }),
+/* 428 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("canvas", { attrs: { id: "my-chart" } })
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-03b01201", module.exports)
+  }
+}
+
+/***/ }),
+/* 429 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+function injectStyle (ssrContext) {
+  if (disposed) return
+  __webpack_require__(430)
+}
+var normalizeComponent = __webpack_require__(14)
+/* script */
+var __vue_script__ = __webpack_require__(432)
+/* template */
+var __vue_template__ = __webpack_require__(433)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = injectStyle
+/* scopeId */
+var __vue_scopeId__ = "data-v-56dbd410"
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/assets/js/components/Home/Skill.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-56dbd410", Component.options)
+  } else {
+    hotAPI.reload("data-v-56dbd410", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 430 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(431);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(22)("8393187a", content, false, {});
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-56dbd410\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Skill.vue", function() {
+     var newContent = require("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-56dbd410\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Skill.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 431 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(13)(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+
+// exports
+
+
+/***/ }),
+/* 432 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_chart_js__ = __webpack_require__(344);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_chart_js___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_chart_js__);
+//
+//
+//
+//
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  name: "profile",
+  data: function data() {
+    return {
+      data: {
+        labels: ["VueJs", "Vuex", "Vue-Router", "Webpack", "Laravel", "ReactJs", "React-Router-v4"],
+        datasets: [{
+          label: "Language Level",
+          backgroundColor: ["#f1e05a", "#3572A5", "#4F5D95", "#178600", "#b07219", "#f34b7d", "#3572A5"],
+          borderColor: "rgba(0,0,0,0.5)",
+          borderWidth: 0.5,
+          hoverBackgroundColor: "rgba(200,200,200,0.7)",
+          hoverBorderColor: "rgba(100,99,100,1)",
+          data: [90, 84, 80, 86, 82, 70, 75]
+        }]
+      },
+      options: {
+        scales: {
+          xAxes: [{
+            ticks: {
+              beginAtZero: true,
+              max: 100,
+              min: 0
+            }
+          }]
+        }
+      }
+    };
+  },
+  mounted: function mounted() {
+    var mySkill = new __WEBPACK_IMPORTED_MODULE_0_chart_js___default.a(document.getElementById("my-chart").getContext("2d"), {
+      type: "horizontalBar",
+      data: this.data,
+      options: this.options
+    });
+  }
+});
+
+/***/ }),
+/* 433 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("canvas", { attrs: { id: "my-chart" } })
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-56dbd410", module.exports)
+  }
+}
 
 /***/ })
 /******/ ]);

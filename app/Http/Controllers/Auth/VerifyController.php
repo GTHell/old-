@@ -5,6 +5,9 @@ namespace App\Http\Controllers\Auth;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
+use DB;
+use App\Models\User;
+
 class VerifyController extends Controller
 {
     //

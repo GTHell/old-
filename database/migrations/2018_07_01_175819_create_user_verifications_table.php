@@ -15,7 +15,13 @@ class CreateUserVerificationsTable extends Migration
     {
         Schema::create('user_verifications', function (Blueprint $table) {
             $table->increments('id');
-            $table->timestamps();
+            $table->integer('user_id')->unsigned();
+            $table->string('token');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+        });
+
+        Schema::table('users', function (Blueprint $table) {
+            $table->boolean('is_verified')->default(0);
         });
     }
 
@@ -27,5 +33,9 @@ class CreateUserVerificationsTable extends Migration
     public function down()
     {
         Schema::dropIfExists('user_verifications');
+
+        Schema::table('users', function (Blueprint $table) {
+            $table->dropColumn('is_verified');
+        });
     }
 }

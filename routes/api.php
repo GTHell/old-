@@ -23,13 +23,20 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 |--------------------------------------------------------------------------
 |
 */
+Route::group([
+
+    // 'middleware' => 'api',
+    'prefix' => 'auth'
+
+], function ($router) {
+
+    Route::post('login', 'AuthController@login');
+    Route::post('logout', 'AuthController@logout');
+    Route::post('refresh', 'AuthController@refresh');
+    Route::post('me', 'AuthController@me');
+
+});
 Route::post('register', 'AuthController@register');
 Route::post('login', 'AuthController@login');
 Route::post('recover', 'AuthController@recover');
-
-Route::group(['middleware' => ['jwt.auth']], function() {
-    Route::get('logout', 'AuthController@logout');
-    Route::get('test', function(){
-        return response()->json(['foo'=>'bar']);
-    });
-});
+Route::post('test', function() {return response()->json(['status'=>'working'], 200);});

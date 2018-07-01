@@ -11,6 +11,21 @@
 |
 */
 
-Route::any('{all}', function () {
-    return view('welcome');
-})->where('all', '.*');
+// Route::any('{all}', function () {
+//     return view('welcome');
+// })->where('all', '.*');
+
+/*
+|--------------------------------------------------------------------------
+| Vue Routes
+|--------------------------------------------------------------------------
+*/
+Route::get('/', function(){return view('welcome');});
+Route::get('/contact', function(){return view('welcome');});
+Route::get('/showcase/shopping-cart', function(){return view('welcome');});
+Route::get('/showcase/shopping-cart/cart', function(){return view('welcome');});
+Route::get('/experiences', function(){return view('welcome');});
+
+Route::get('user/verify/{verification_code}', 'AuthController@verifyUser');
+Route::get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm')->name('password.request');
+Route::post('password/reset', 'Auth\ResetPasswordController@postReset')->name('password.reset');

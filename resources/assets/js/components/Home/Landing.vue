@@ -8,16 +8,64 @@
 					</div>
 				</div>
 				<div class="content">
-
+          <div class="main-box"></div>
 				</div>
 		</header>
   </div>
 </template>
 
 <script>
+import { TweenMax, Power2, TimelineLite } from "gsap/TweenMax";
 
 export default {
-  name: "landing"
+  name: "landing",
+  mounted() {
+    var $box = document.getElementsByClassName("main-box");
+    TweenLite.to($box, 0.4, {
+      top: "100%",
+      y: "-100%",
+      ease: Bounce.easeOut,
+      delay: 2
+    });
+    TweenLite.to($box, 0.7, {
+      x: "+=200px",
+      y: "-100%",
+      ease: Back.easeInOut,
+      delay: 3
+    });
+    TweenLite.to($box, 0.8, {
+      x: "-=200px",
+      y: "-100%",
+      ease: Back.easeInOut,
+      delay: 4.2
+    });
+    TweenLite.to($box, 2.5, {
+      top: "50%",
+      y: "-50%",
+      ease: Power0.easeNone,
+      delay: 5
+    });
+    TweenLite.to($box, 2.5, {
+      x: "+=400px",
+      ease: Elastic.easeInOut,
+      delay: 7.7
+    });
+    TweenLite.to($box, 2.5, {
+      x: "-=300px",
+      rotation: -720,
+      ease: Elastic.easeInOut,
+      delay: 9.4
+    });
+    TweenLite.to($box, 2.5, {
+      width: '100%',
+      height: '100%',
+      y: 0,
+      x: 0,
+      opacity: 0.7,
+      ease: Elastic.easeInOut,
+      delay: 10.4
+    });
+  }
 };
 </script>
 
@@ -36,8 +84,19 @@ export default {
     color: white;
   }
   .content {
+    height: 100%;
+    width: 100%;
+    position: absolute;
     background: #f56c6c;
     height: 70vh;
+  }
+
+  .main-box {
+    position: absolute;
+    height: 100px;
+    width: 100px;
+    background: teal;
+    z-index: 2;
   }
 }
 </style>

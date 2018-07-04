@@ -1,18 +1,6 @@
 <template>
 	<div>
-		<section class="main">
-			<div class="container my-3">
-				<div class="my-img">
-					<img src="/photos/sith.jpg" alt="" class="">
-				</div>
-				<h3>&ltGreeting/&gt</h3>
-				<p>Hello, I'm Sith, a fullstack web developer. I fix server, create new thing, solve problem and save life by
-					using Google.
-					My secret recipes is reading fast and understand thing well.
-				</p>
-				<my-skill></my-skill>
-			</div>
-		</section>
+		<landing-item></landing-item>
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12 my-3">
@@ -65,44 +53,46 @@
 </template>
 
 <script>
-	import Chart from 'chart.js'
-	import MyLanguage from './Language.vue'
-	import MySkill from './Skill.vue'
-  
-  export default {
-    name: 'profile',
-		components: {
-			'my-language': MyLanguage,
-			'my-skill': MySkill
-		}
+import Chart from "chart.js";
+import MyLanguage from "./Language.vue";
+import MySkill from "./Skill.vue";
+import LandingItem from './Landing'
+
+export default {
+  name: "profile",
+  components: {
+    "my-language": MyLanguage,
+		"my-skill": MySkill,
+		LandingItem
   }
+};
 </script>
 
-<style scoped>
-	.main-profile {
-		background-color: rgba(255, 255, 255, 0.2);
-	}
-	
-	.my-img {
-		border-radius: 50%;
-		border: 3px solid white;
-		width: 220px;
-		height: 220px;
-		overflow: hidden;
-		margin-left: 50%;
-		transform: translateX(-50%);
-		/*background: url('../photos/sith.jpg');*/
-	}
-	
-	.my-img img {
-		width: 216px;
-		height: 221px;
-		object-fit: cover;
-	}
-	
-	.main {
-		background: linear-gradient(3deg, #ceffb6 0%, #00b5d2 100%);
-		padding-top: auto;
-		overflow: hidden;
-	}
+<style scoped lang='scss'>
+.main-profile {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.my-img {
+  border-radius: 50%;
+  border: 3px solid white;
+  width: 220px;
+  height: 220px;
+  overflow: hidden;
+  margin-left: 50%;
+  transform: translateX(-50%);
+  /*background: url('../photos/sith.jpg');*/
+}
+
+.my-img img {
+  width: 216px;
+  height: 221px;
+  object-fit: cover;
+}
+
+.main {
+  background: linear-gradient(3deg, #ceffb6 0%, #00b5d2 100%);
+  padding-top: auto;
+  overflow: hidden;
+}
 </style>
